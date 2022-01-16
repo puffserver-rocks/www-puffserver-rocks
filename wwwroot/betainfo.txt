@@ -130,6 +130,9 @@ Admin Commands:
   - Set mp_taser_recharge_time to 1
     - TODO: set this as a menu of options from -1 to 10
 
+!knifeonly
+  - Knife only
+
 =================================================================================
 Player Commands:
 !discord
@@ -167,6 +170,9 @@ Player Votes:
     - Damage from knife disabled.
       - This can be extended to any weapon so if you have any ideas
   - can be stacked with !votelowgrav
+
+!voteknifeonly
+  - Knife only
 
 !votedefault
   - Reset weapons restrictions and physics to default
