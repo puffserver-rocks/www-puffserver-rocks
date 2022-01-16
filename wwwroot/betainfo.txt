@@ -24,11 +24,19 @@ Ideas generated:
   - !voteknifeonly
   - Custom gamemodes should last one round by default
   - (unlimited) breach charge only on de_inferno_destruct? (poll open)
+
+
+
+
 =================================================================================
 Plugins pending review:
   - Steam group based admin management plugin
     - Would assign flags based on group memebership
     - Greatly ease application of future donor tags/permissions/etc
+
+
+
+
 Currently implemented (on beta):
 =================================================================================
 CSGO Server Process:
