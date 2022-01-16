@@ -1,0 +1,152 @@
+Puff Casual Beta Server
+
+Last updated 2022.01.15
+
+2022.01.15 - drop vote warning down to 5 seconds so it fires during freezetime, other small tweaks/fixes
+2022.01.14 - add !votezeusrecharge, properly restart rounds for restriction votes
+2022.01.13 - initial publish
+
+connect beta.puffserver.rocks; password puffbeta;
+
+Currently implemented (on beta):
+
+=================================================================================
+CSGO Server Process:
+  - Automatic updates with a 30 second warning
+  - Discord notifications for start/stop/update
+
+=================================================================================
+General Config:
+  - Cash, armor, etc configs pulled over from old puff
+  - Core sourcemod databases on mysql instead of sqlite
+  - Fast-DL (we don't need it but it's there)
+  - Killer Replays
+  - mp_drop_knife_enable 1 (on beta, awaiting feedback)
+
+=================================================================================
+Map management:
+Sourcemod mapchooser => mapchooser-extended
+  - Vote at start of first possible last round
+    - Unable to vote at end of match b/c podium blur overlays sourcemod menu :(
+  - "No Vote" option in slot 1 and block slots 2, 3 when vote active
+  - 45 second vote duration
+  - 5 second warning countdown before vote in hintbox
+  - Vote progress displayed in hintbox
+  - !nominate shows searched maps instead of selecting first match
+  - !rtv mostly unchanged
+
+=================================================================================
+Plugins:
+1v1 Knife Fight
+  - Offers a knife fight when there is a 1v1
+    - This uses the sourcemod menus which might be distracting
+      - explore having a !knifefight command instead?
+  - Teleports players to eachother and restricts to knife only for the duration of the fight
+  - Returns weapons after the fight
+
+Adverts
+  - Now has a join message with a link to where the rules.txt will be
+  - Rest of adverts are randomized and normalized
+
+!helpmenu
+  - Provides a !helpmenu with:
+    - Short rules, server info, public command list, map list
+
+Discord Notifications
+  - Prints a message to discord on map change when there are more than 8 people in the server
+  - Needs further testing, might be too noisy and require further modification
+
+AFK Management
+  - Moves players to spectate if they are afk
+    - 120 seconds total
+    - 60 seconds in spawn
+
+SoD Stats
+  - Running with mysql instead of sqlite db (uses sourcemod builtin)
+  - Replace with gameme.com stats?
+
+Admin tags
+  - Admins who wish to be tagged can be
+
+ExtraSpawnPoints
+  - Creates extra spawn points on top of existing ones when less than X spawns are on the map
+  - Hopefully fixes the "this map is limited to 10 people" problems
+
+=================================================================================
+Player Commands:
+!discord
+  - Prints discord link
+
+!rules
+  - Prints rules link puffserver.rocks/rules
+
+!donate
+  - Prins puffserver.rocks/donate with a paypal button or embed
+
+!info
+  - Prints puffserver.rocks link
+
+=================================================================================
+Player Votes:
+!votezeusrecharge
+  - Sets zeus recharge time
+  - Offers no recharge, 1, 2.5, and 5 seconds
+  - Somewhat buggy in that it asks a yes/no after selecting a value?
+    - Look into this, probs a simple change in the plugin
+
+!votestabstabzap
+  - zeus/knife/bomb only
+  - normal physics
+  - can be stacked with !votelowgrav
+
+!votescoutsknives
+  - flying scoutsman physics and weapon restrictions
+
+!votelowgrav
+  - flying scoutsman physics (lowgrav + airaccelerate)
+
+!votedodgeball
+  - Decoy + knife only.
+    - Damage from knife disabled.
+      - This can be extended to any weapon so if you have any ideas
+  - can be stacked with !votelowgrav
+
+!votedefault
+  - Reset weapons restrictions and physics to default
+
+!votescramble
+  - Scrambles teams using mp_scrambleteams. Forces a match restart.
+    - Other scramble methods that don't restart the match?
+
+!votenobots
+  - Sets bot_quota to 0 and kicks bots
+
+!voteyesbots
+  - Sets bot_quota to 10
+
+!votebeacon
+  - sm_beacon [target]
+
+!votekick
+  - sm_kick [target]
+
+!voteban
+  - sm_ban [target]
+
+!votemute
+  - sm_silence [target]
+
+!voterestart
+  - Issues a retry to all clients and then restarts the server
+    - Most clients will reconnect, some will be booted
+  - Requires a 100% yes vote
+
+=================================================================================
+Map Configs:
+de_westwood2
+  - Enforced nova/r8/bomb only
+
+de_inferno_destruct
+  - cs_enable_player_physics_box 1 per the workshop page
+
+- Ideas for others?
