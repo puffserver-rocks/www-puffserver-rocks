@@ -1,7 +1,7 @@
 Puff Casual Beta Server
                         
 Last updated 2022.01.16
-2022.01.16 - beta night round 2
+2022.01.16 - beta night round 2, admin commands
 2022.01.15 - drop vote warning down to 5 seconds so it fires during freezetime, other small tweaks/fixes
 2022.01.14 - add !votezeusrecharge, properly restart rounds for restriction votes
 2022.01.13 - initial publish
@@ -99,6 +99,36 @@ Admin tags
 ExtraSpawnPoints - Disabled for now pending review/rewrite
   - Creates extra spawn points on top of existing ones when less than X spawns are on the map
   - Hopefully fixes the "this map is limited to 10 people" problems
+
+=================================================================================
+Admin Commands:
+!defaults
+  - Equiv of !votedefault vote pass
+
+!westwood
+  - Apply westwood2 map config
+
+!stabstabzap
+  - Equiv of !votestabstabzap vote pass
+
+!scoutsknives
+  - Equiv of !votescoutsknives vote pass
+
+!lowgrav
+  - Equiv of !votelowgrav vote pass
+
+!dodgeball
+  - Equiv of !votedodgeball vote pass
+
+!alltalkon
+  - Turn on alltalk
+
+!alltalkoff
+  - Turn off alltalk
+
+!zeusrecharge
+  - Set mp_taser_recharge_time to 1
+    - TODO: set this as a menu of options from -1 to 10
 
 =================================================================================
 Player Commands:
