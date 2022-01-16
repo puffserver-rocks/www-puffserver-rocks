@@ -1,15 +1,35 @@
 Puff Casual Beta Server
-
-Last updated 2022.01.15
-
+                        
+Last updated 2022.01.16
+2022.01.16 - beta night round 2
 2022.01.15 - drop vote warning down to 5 seconds so it fires during freezetime, other small tweaks/fixes
 2022.01.14 - add !votezeusrecharge, properly restart rounds for restriction votes
 2022.01.13 - initial publish
 
 connect beta.puffserver.rocks; password puffbeta;
 
+=================================================================================
+Beta night round two results:
+  - Learned that these plugins are somewhat broken:
+    - Knifefights - crashes every client somehow - worked properly a few times. Maybe an issue re: players controlling bots?
+    - CustomVotes - sometimes (often) doesn't display vote to all players
+    - ExtraSpawnPoints - appears to be creating spawns at deathmatch spawn locations
+  - Confirmed an engine bug with mp_drop_knife_enable 1 that:
+    - Prevents you from picking up a dropped knife if you have a zeus in your inventory
+    - Prevents you from spawning with a knife if you have a zeus in your inventory
+    - A potential workaround is being investigated
+  - Dodgeball mode (!votedodgeball) is absolute chaos and the best thing ever
+Ideas generated:
+  - !votealltalk !votealltalkoff
+  - !voteknifeonly
+  - Custom gamemodes should last one round by default
+  - (unlimited) breach charge only on de_inferno_destruct? (poll open)
+=================================================================================
+Plugins pending review:
+  - Steam group based admin management plugin
+    - Would assign flags based on group memebership
+    - Greatly ease application of future donor tags/permissions/etc
 Currently implemented (on beta):
-
 =================================================================================
 CSGO Server Process:
   - Automatic updates with a 30 second warning
@@ -37,9 +57,9 @@ Sourcemod mapchooser => mapchooser-extended
 
 =================================================================================
 Plugins:
-1v1 Knife Fight
+1v1 Knife Fight - Disabled for now pending review/rewrite
   - Offers a knife fight when there is a 1v1
-    - This uses the sourcemod menus which might be distracting
+    - This uses the sourcemod menus which might be distracting 
       - explore having a !knifefight command instead?
   - Teleports players to eachother and restricts to knife only for the duration of the fight
   - Returns weapons after the fight
@@ -68,7 +88,7 @@ SoD Stats
 Admin tags
   - Admins who wish to be tagged can be
 
-ExtraSpawnPoints
+ExtraSpawnPoints - Disabled for now pending review/rewrite
   - Creates extra spawn points on top of existing ones when less than X spawns are on the map
   - Hopefully fixes the "this map is limited to 10 people" problems
 
@@ -93,7 +113,6 @@ Player Votes:
   - Offers no recharge, 1, 2.5, and 5 seconds
   - Somewhat buggy in that it asks a yes/no after selecting a value?
     - Look into this, probs a simple change in the plugin
-
 !votestabstabzap
   - zeus/knife/bomb only
   - normal physics
@@ -145,7 +164,6 @@ Player Votes:
 Map Configs:
 de_westwood2
   - Enforced nova/r8/bomb only
-
 de_inferno_destruct
   - cs_enable_player_physics_box 1 per the workshop page
 
