@@ -1,6 +1,11 @@
 Puff Casual Beta Server
                         
 Last updated 2022.01.16
+2022.01.17 - add breach_only mode (not quite working yet), 
+             no bomb/default winner during dodgeball mode (overwhelming yes vote in poll, can change later), 
+             add !knifeonly adm cmd, 
+             add !giveknife, 
+             and a special surprise!
 2022.01.16 - beta night round 2, admin commands
 2022.01.15 - drop vote warning down to 5 seconds so it fires during freezetime, other small tweaks/fixes
 2022.01.14 - add !votezeusrecharge, properly restart rounds for restriction votes
@@ -20,10 +25,10 @@ Beta night round two results:
     - A potential workaround is being investigated
   - Dodgeball mode (!votedodgeball) is absolute chaos and the best thing ever
 Ideas generated:
-  - !votealltalk !votealltalkoff
-  - !voteknifeonly
+  - !votealltalk !votealltalkoff - implemented as admin commands for now, maybe a votable later
+  - !voteknifeonly - implemented
   - Custom gamemodes should last one round by default
-  - (unlimited) breach charge only on de_inferno_destruct? (poll open)
+  - (unlimited) breach charge only on de_inferno_destruct? (after an overwhelming yes vote this has been implemented)
 
 
 
@@ -133,6 +138,9 @@ Admin Commands:
 !knifeonly
   - Knife only
 
+!breachonly
+  - Breach only
+
 =================================================================================
 Player Commands:
 !discord
@@ -146,6 +154,9 @@ Player Commands:
 
 !info
   - Prints puffserver.rocks link
+
+!giveknife
+  - Spawns the players knife either in their inventory or at their feet
 
 =================================================================================
 Player Votes:
