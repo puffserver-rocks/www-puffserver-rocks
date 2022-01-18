@@ -1,6 +1,9 @@
 Puff Casual Beta Server
                         
-Last updated 2022.01.17
+Last updated 2022.01.18
+2022.01.18 - Bump sm_damageblocklist to latest ver
+           - leverage said to further enforce weapon restrictions
+           - reworked a few configs to make more sense
 2022.01.17 - add breach_only mode (currently only works on de_inferno_destruct, stay tuned), 
              no bomb/default winner during dodgeball mode (overwhelming yes vote in poll, can change later), 
              add !knifeonly adm cmd,
@@ -25,28 +28,25 @@ Beta night round two results:
     - Prevents you from spawning with a knife if you have a zeus in your inventory
     - A potential workaround is being investigated
   - Dodgeball mode (!votedodgeball) is absolute chaos and the best thing ever
+
 Ideas generated:
   - !votealltalk !votealltalkoff - implemented as admin commands for now, maybe a votable later
   - !voteknifeonly - implemented
   - Custom gamemodes should last one round by default
   - (unlimited) breach charge only on de_inferno_destruct? (after an overwhelming yes vote this has been implemented)
 
-
-
-
-Plugins pending review:
-  - Steam group based admin management plugin
-    - Would assign flags based on group memebership
-    - Greatly ease application of future donor tags/permissions/etc
-
-
-
-
+=================================================================================
 Currently implemented (on beta):
 =================================================================================
 CSGO Server Process:
   - Automatic updates with a 30 second warning
   - Discord notifications for start/stop/update
+
+=================================================================================
+Plugins pending review:
+  - Steam group based admin management plugin
+    - Would assign flags based on group memebership
+    - Greatly ease application of future donor tags/permissions/etc
 
 =================================================================================
 General Config:
