@@ -1,10 +1,11 @@
 Puff Casual Beta Server
                         
-Last updated 2022.01.16
-2022.01.17 - add breach_only mode (not quite working yet), 
+Last updated 2022.01.17
+2022.01.17 - add breach_only mode (currently only works on de_inferno_destruct, stay tuned), 
              no bomb/default winner during dodgeball mode (overwhelming yes vote in poll, can change later), 
-             add !knifeonly adm cmd, 
-             add !giveknife, 
+             add !knifeonly adm cmd,
+             custom modes in !admin menu,
+             add !giveknife,
              and a special surprise!
 2022.01.16 - beta night round 2, admin commands
 2022.01.15 - drop vote warning down to 5 seconds so it fires during freezetime, other small tweaks/fixes
@@ -33,7 +34,6 @@ Ideas generated:
 
 
 
-=================================================================================
 Plugins pending review:
   - Steam group based admin management plugin
     - Would assign flags based on group memebership
@@ -106,7 +106,7 @@ ExtraSpawnPoints - Disabled for now pending review/rewrite
   - Hopefully fixes the "this map is limited to 10 people" problems
 
 =================================================================================
-Admin Commands:
+Admin Commands / Menu:
 !defaults
   - Equiv of !votedefault vote pass
 
