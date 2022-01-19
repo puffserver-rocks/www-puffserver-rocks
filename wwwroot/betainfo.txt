@@ -1,6 +1,10 @@
 Puff Casual Beta Server
                         
-Last updated 2022.01.18
+Last updated 2022.01.19
+2022.01.19 - Rework configs now that we have sm_hookevent and sm_endround
+           - Single-round gamemode and whole-match gamemode options are now working properly
+           - Admins check the admin section below for updated commands
+           - Still looking for a way to enforce weapon restrictions without having to run 'sm_slay @all'
 2022.01.18 - Bump sm_damageblocklist to latest ver
            - leverage said to further enforce weapon restrictions
            - reworked a few configs to make more sense
@@ -32,7 +36,7 @@ Beta night round two results:
 Ideas generated:
   - !votealltalk !votealltalkoff - implemented as admin commands for now, maybe a votable later
   - !voteknifeonly - implemented
-  - Custom gamemodes should last one round by default
+  - Custom gamemodes should last one round by default - implemented
   - (unlimited) breach charge only on de_inferno_destruct? (after an overwhelming yes vote this has been implemented)
 
 =================================================================================
@@ -107,23 +111,26 @@ ExtraSpawnPoints - Disabled for now pending review/rewrite
 
 =================================================================================
 Admin Commands / Menu:
+- Gamemode commands have a corresponding entry in the !admin menu for single round / whole match
+- Votes and Chat commands enable for one round
+
 !defaults
   - Equiv of !votedefault vote pass
 
 !westwood
-  - Apply westwood2 map config
+  - Equiv of !votewestwood pass, enables Westwood2 mode for the next round
 
 !stabstabzap
-  - Equiv of !votestabstabzap vote pass
+  - Equiv of !votestabstabzap pass, enables stabstabzap for the next round
 
 !scoutsknives
-  - Equiv of !votescoutsknives vote pass
+  - Equiv of !votescoutsknives pass, enables scoutsknives for the next round
 
 !lowgrav
-  - Equiv of !votelowgrav vote pass
+  - Equiv of !votelowgrav pass, enables lowgrav for the next round (can be stacked with other modes, has to be called second)
 
 !dodgeball
-  - Equiv of !votedodgeball vote pass
+  - Equiv of !votedodgeball pass, enables dodgeball for the next round
 
 !alltalkon
   - Turn on alltalk
@@ -133,13 +140,13 @@ Admin Commands / Menu:
 
 !zeusrecharge
   - Set mp_taser_recharge_time to 1
-    - TODO: set this as a menu of options from -1 to 10
+    - !admin -> 4 -> Zeus menu has options from -1 (off) to 5
 
 !knifeonly
-  - Knife only
+  - Equiv of !voteknifeonly pass, enables knifeonly for the next round
 
 !breachonly
-  - Breach only
+  - Equiv of !votebreachonly pass, enables breachonly for the next round
 
 =================================================================================
 Player Commands:
