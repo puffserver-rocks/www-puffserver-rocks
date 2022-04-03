@@ -11,4 +11,5 @@ We don't want you and will boot you if
 - You engage in chat/mic/radio spamming
 - You say, reinforce, or display non-inclusive language
 - You make any other member of puff feel unwelcome
-- You ignore admin requests that pertain to the above rules. If you are asked to stop doing/saying something and you continue, you will be kicked/banned
+- You ignore admin requests that pertain to the above rules. 
+- If you are asked to stop doing/saying something and you continue, you will be kicked/banned

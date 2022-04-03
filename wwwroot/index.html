@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>PUFF PUFF</title>
+
 	<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 	<meta charset="utf-8" />
@@ -14,9 +15,18 @@
 
 </head>
 <body class="is-preload">
+	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
 	<!-- Sidebar -->
 	<section id="sidebar">
 		<div class="inner">
@@ -24,11 +34,8 @@
 				<ul>
 					<li><a href="#connect">Connect</a></li>
 					<li><a href="#rules">Rules</a></li>
-					<li><a href="#polls">Polls</a></li>
 					<li><a href="#donate">Donate</a></li>
-					<li><a href="#beta">Beta Info</a></li>
 					<li><a href="#discord">Discord</a></li>
-
 				</ul>
 			</nav>
 		</div>
@@ -38,55 +45,33 @@
 	<div id="wrapper">
 		<!-- Intro -->
 		<section id="connect" class="wrapper style1 fullscreen fade-up">
-				<div class="content" >
-					<center>
+			<div class="content" >
+				<center>
 					<img src="images/PUFF_PUFF-logo.png" style="width: 45%">
 					<br>
 					<br>
-					<a href="steam://connect/68.232.168.94/puff" class="button primary">Puff Casual</a>
+					<a href="steam://connect/casual.puffserver.rocks/puff" class="button primary">Puff Casual</a>
 					<a href="steam://connect/movement.goosga.ng:27215/goosgang" class="button primary">Puff Movement</a>
-					<a href="steam://connect/casual.beta.puffserver.rocks/puffbeta" class="button primary">Puff Beta</a>
+					<br>
 				</center>
-				</div>
-		</section>
-
-		<!-- One -->
-		<section id="rules" class="wrapper style1 fullscreen">
-				<div class="content">
-					<center>
-						<h2>RULES</h2>
-						<br>
-						<br>
-						<div id="list">
-							<iframe src="rules.txt" frameborder="0" height="400"
-								width="80%"></iframe>
-							</div>
-					</center>
-				</div>
-		</section>
-
-			<!-- Two -->
-		<section id="polls" class="wrapper style1 fullscreen fade-up">
-			<div class="content">
-
-				<div class="inner">
-							<center>
-							<h2>Vote for these features:</h2>
-							<p>Enable drop knife?</p>
-              <a href="https://linkto.run/p/7NZXFEQL" target="_blank" class="button fit" style="width: 55%;">VOTE</a>
-							<br>
-							<p>Bomb during dodgeball mode?</p>
-							<a href="https://linkto.run/p/YO9LVHEP" target="_blank" class="button fit" style="width: 55%;">VOTE</a>
-							<br>
-							<p>Restrict Breach/Knife/Zeus only on de_inferno_destruct?</p>
-              <a href="https://linkto.run/p/W4EP0RHK" target="_blank" class="button fit" style="width: 55%;">VOTE</a>
-						  </center>
-				</div>
-
 			</div>
 		</section>
 
-		<!-- Three -->
+		<!-- Rules -->
+		<section id="rules" class="wrapper style1 fullscreen">
+			<div class="content">
+				<center>
+					<h2>RULES</h2>
+					<br>
+					<br>
+					<div id="list">
+						<iframe src="rules.txt" frameborder="0" height="400" width="60%"></iframe>
+					</div>
+				</center>
+			</div>
+		</section>
+
+		<!-- Donate link -->
 		<section id="donate" class="wrapper style1 fullscreen fade-up">
 			<div class="content">
 				<center>
@@ -102,30 +87,14 @@
 			</div>
 		</section>
 
-
-		<!-- four -->
-		<section id="beta" class="wrapper style1 fullscreen fade-up">
-			<div class="content">
-				<center>
-					<h2>BETA INFO</h2>
-					<br>
-					<br>
-					<div id="list">
-						<iframe src="betainfo.txt" frameborder="0" height="800"
-							width="80%"></iframe>
-					</div>
-				</center>
-			</div>
-		</section>
-
-		<!-- four -->
+		<!-- Discord join info -->
 		<section id="discord" class="wrapper style1 fullscreen fade-up">
 			<div class="content">
 				<center>
 					<h2>JOIN US</h2>
 					<br>
 					<br>
-					<iframe src="https://discord.com/widget?id=850819036790521886&theme=dark" width="80%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+					<iframe src="https://discord.com/widget?id=850819036790521886&theme=dark" width="60%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 				</center>
 			</div>
 		</section>
@@ -138,19 +107,10 @@
 					<li><a href="#connect">Connect</a></li>
 					<li><a href="#rules">Rules</a></li>
 					<li><a href="#discord">Discord</a></li>
+					<li><a href="#donate">Donate</a></li>
 				</ul>
 			</div>
 		</footer>
 	</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-	</body>
-	</html>
+</body>
+</html>
