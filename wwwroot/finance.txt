@@ -1,0 +1,35 @@
+last updated 2022.06.28
+
++-----------+----------------+-----------------------------+--------+-------+--------+---------+
+|   Date    |      Name      |            Type             | Gross  |  Fee  |  Net   | Balance |
++-----------+----------------+-----------------------------+--------+-------+--------+---------+
+| 1/2/2022  | Donation       | Donation Payment            |      1 | -0.52 |   0.48 |    0.48 |
+| 1/2/2022  | Donation       | Donation Payment            |      5 | -0.63 |   4.37 |    4.85 |
+| 1/2/2022  | Vultr Holdings | General Credit Card Deposit |   0.15 |     0 |   0.15 |       5 |
+| 1/2/2022  | Vultr Holdings | Express Checkout Payment    |     -5 |     0 |     -5 |       0 |
+| 1/2/2022  | Porkbun, LLC   | General Authorization       |  -4.61 |     0 |  -4.61 |       0 |
+| 1/2/2022  | Porkbun, LLC   | General Credit Card Deposit |   4.61 |     0 |   4.61 |    4.61 |
+| 1/2/2022  | Porkbun, LLC   | Express Checkout Payment    |  -4.61 |     0 |  -4.61 |       0 |
+| 1/2/2022  | Porkbun, LLC   | General Authorization       |  -4.61 |     0 |  -4.61 |       0 |
+| 1/6/2022  | Donation       | Donation Payment            |     10 | -0.78 |   9.22 |    9.22 |
+| 1/6/2022  | Donation       | Donation Payment            |     25 | -1.21 |  23.79 |   33.01 |
+| 1/13/2022 | Donation       | Donation Payment            |      5 | -0.63 |   4.37 |   37.38 |
+| 1/14/2022 | Donation       | Donation Payment            |      1 | -0.52 |   0.48 |   37.86 |
+| 1/15/2022 | Donation       | Donation Payment            |     20 | -1.07 |  18.93 |   56.79 |
+| 4/26/2022 | Donation       | Subscription Payment        |      5 | -0.63 |   4.37 |   61.16 |
+| 5/7/2022  | Vultr Holdings | Express Checkout Payment    |    -25 |     0 |    -25 |   36.16 |
+| 5/12/2022 | Donation       | Donation Payment            |     10 | -0.78 |   9.22 |   45.38 |
+| 5/13/2022 | Donation       | Donation Payment            |     10 | -0.78 |   9.22 |    54.6 |
+| 5/23/2022 | Vultr Holdings | Express Checkout Payment    |    -25 |     0 |    -25 |    29.6 |
+| 5/26/2022 | Donation       | Subscription Payment        |      5 | -0.63 |   4.37 |   33.97 |
+| 5/28/2022 | HOSTHATCH LLC  | Express Checkout Payment    |    -15 |     0 |    -15 |   18.97 |
+| 5/28/2022 | Donation       | Donation Payment            |     25 | -1.21 |  23.79 |   42.76 |
+| 6/4/2022  | Donation       | Donation Payment            |     10 | -0.78 |   9.22 |   51.98 |
+| 6/8/2022  | Donation       | Donation Payment            |      5 | -0.63 |   4.37 |   56.35 |
+| 6/10/2022 | Donation       | Donation Payment            |      5 | -0.63 |   4.37 |   60.72 |
+| 6/12/2022 | Donation       | Donation Payment            |     20 | -1.07 |  18.93 |   79.65 |
+| 6/14/2022 | HOSTHATCH LLC  | Express Checkout Payment    |    -15 |     0 |    -15 |   64.65 |
+| 6/15/2022 | HOSTHATCH LLC  | Express Checkout Payment    | -10.03 |     0 | -10.03 |   54.62 |
+| 6/18/2022 | Donation       | Donation Payment            |    100 | -3.38 |  96.62 |  151.24 |
+| 6/26/2022 | Donation       | Subscription Payment        |      5 | -0.63 |   4.37 |  155.61 |
++-----------+----------------+-----------------------------+--------+-------+--------+---------+
