@@ -1,14 +1,14 @@
-last updated 2022.06.28
+last updated 2022.07.23
 
 +-----------+----------------+-----------------------------+--------+-------+--------+---------+
 |   Date    |      Name      |            Type             | Gross  |  Fee  |  Net   | Balance |
 +-----------+----------------+-----------------------------+--------+-------+--------+---------+
 | 1/2/2022  | Donation       | Donation Payment            |      1 | -0.52 |   0.48 |    0.48 |
 | 1/2/2022  | Donation       | Donation Payment            |      5 | -0.63 |   4.37 |    4.85 |
-| 1/2/2022  | Vultr Holdings | General Credit Card Deposit |   0.15 |     0 |   0.15 |       5 |
+| 1/2/2022  | Direct Funding | General Credit Card Deposit |   0.15 |     0 |   0.15 |       5 |
 | 1/2/2022  | Vultr Holdings | Express Checkout Payment    |     -5 |     0 |     -5 |       0 |
 | 1/2/2022  | Porkbun, LLC   | General Authorization       |  -4.61 |     0 |  -4.61 |       0 |
-| 1/2/2022  | Porkbun, LLC   | General Credit Card Deposit |   4.61 |     0 |   4.61 |    4.61 |
+| 1/2/2022  | Direct Funding | General Credit Card Deposit |   4.61 |     0 |   4.61 |    4.61 |
 | 1/2/2022  | Porkbun, LLC   | Express Checkout Payment    |  -4.61 |     0 |  -4.61 |       0 |
 | 1/2/2022  | Porkbun, LLC   | General Authorization       |  -4.61 |     0 |  -4.61 |       0 |
 | 1/6/2022  | Donation       | Donation Payment            |     10 | -0.78 |   9.22 |    9.22 |
@@ -32,4 +32,10 @@ last updated 2022.06.28
 | 6/15/2022 | HOSTHATCH LLC  | Express Checkout Payment    | -10.03 |     0 | -10.03 |   54.62 |
 | 6/18/2022 | Donation       | Donation Payment            |    100 | -3.38 |  96.62 |  151.24 |
 | 6/26/2022 | Donation       | Subscription Payment        |      5 | -0.63 |   4.37 |  155.61 |
+| 7/15/2022 | Donation       | Donation Payment            |     15 | -0.92 |  14.08 |  169.69 |
+| 7/16/2022 | HOSTHATCH LLC  | Express Checkout Payment    |    -22 |     0 |    -22 |  147.69 |
+| 7/19/2022 | Donation       | Donation Payment            |     25 | -1.21 |  23.79 |  171.48 |
+| 7/22/2022 | Donation       | Donation Payment            |     50 | -1.94 |  48.06 |  219.54 |
+| 7/22/2022 | Donation       | Subscription Payment        |      5 | -0.63 |   4.37 |  223.91 |
+| 7/22/2022 | Donation       | Donation Payment            |      5 | -0.63 |   4.37 |  228.28 |
 +-----------+----------------+-----------------------------+--------+-------+--------+---------+
