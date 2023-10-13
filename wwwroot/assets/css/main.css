@@ -24,9 +24,12 @@ section, summary, time, mark, audio, video {
 	font: Courier;
 	vertical-align: baseline;
 }
+html{
+	background-color: #1B1B1C;
+}
 iframe {
 	border-radius: 10px;
-	background-color: white;
+	background-color: #1B1B1C;
 }
 
 article, aside, details, figcaption, figure,
@@ -178,10 +181,10 @@ input, select, textarea {
 	p {
 	margin: 0 0 2em 0;
 	color: white;
-	text-align: left;
+	text-align: center;
 	padding-top: 1em;
 	font-size: 15px;
-	margin-left: 25%;
+	margin: 15px;
 }
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3213,6 +3216,7 @@ input, select, textarea {
 
 	.wrapper {
 		position: relative;
+		background-color: #1B1B1C;
 	}
 
 		.wrapper > .inner {
@@ -3911,3 +3915,53 @@ input, select, textarea {
 			}
 
 		}
+		.marquee {
+			--gap: 1rem;
+			position: relative;
+			display: flex;
+			overflow: hidden;
+			user-select: none;
+			gap: var(--gap);
+			background-color: #1B1B1C;
+		  }
+		  
+		  .marquee__content {
+			flex-shrink: 0;
+			display: flex;
+			justify-content: space-around;
+			gap: var(--gap);
+			min-width: 100%;
+			padding-right: 5px;
+			word-spacing: 3px;
+		  }
+		  
+		  @keyframes scroll {
+			from {
+			  transform: translateX(0);
+			}
+			to {
+			  transform: translateX(calc(-100% - var(--gap)));
+			}
+		  }
+		  .marquee__content {
+			animation: scroll 20s linear infinite;
+		  }
+
+		  .marquee > * {
+			color: rgb(72, 164, 255);
+			
+			margin: 0;
+			padding: 10px 10px;
+			text-align: center;
+			list-style-type: none;
+				  }
+
+			.connect{
+				margin: 0 15%;
+				text-align: left;
+				color: white;
+
+			}
+			.connect p li{
+				text-align: left;
+			}
