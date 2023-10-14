@@ -3235,6 +3235,10 @@ input, select, textarea {
 					padding: 4em 4em 2em 4em ;
 				}
 
+				#Intro img{
+					margin-top: 20px;
+				}
+
 			}
 
 			@media screen and (max-width: 1280px) {
@@ -3962,10 +3966,17 @@ input, select, textarea {
 				  }
 
 			.connect{
-				margin: 0 15%;
+				margin: 0 30%;
 				text-align: left;
 				color: white;
 
+			}
+			@media screen and (max-width: 720px) {
+
+				.connect{
+					margin: 0 10%;
+	
+				}
 			}
 			.connect p li{
 				text-align: left;
