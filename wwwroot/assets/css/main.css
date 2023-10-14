@@ -3953,7 +3953,7 @@ input, select, textarea {
 		  }
 
 		  .marquee > * {
-			color: rgb(72, 164, 255);
+			color: #00acd8;
 			
 			margin: 0;
 			padding: 10px 10px;
