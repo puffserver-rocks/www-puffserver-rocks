@@ -31,6 +31,10 @@ iframe {
 	border-radius: 10px;
 	background-color: #1B1B1C;
 }
+body{
+	background-color: #1B1B1C;
+
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -3917,12 +3921,13 @@ input, select, textarea {
 		}
 		.marquee {
 			--gap: 1rem;
-			position: relative;
+			position: fixed;
 			display: flex;
 			overflow: hidden;
 			user-select: none;
 			gap: var(--gap);
 			background-color: #1B1B1C;
+			z-index: 1;
 		  }
 		  
 		  .marquee__content {
