@@ -3974,6 +3974,10 @@ input, select, textarea {
 			.connectimg{
 				width:69%;
 			}
+			#connect-vid video{
+				height: auto;
+				width: 100%;
+				}
 			@media screen and (max-width: 720px) {
 
 				.connect{
