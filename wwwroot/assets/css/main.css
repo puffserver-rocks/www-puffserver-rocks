@@ -3971,11 +3971,17 @@ input, select, textarea {
 				color: white;
 
 			}
+			.connectimg{
+				width:69%;
+			}
 			@media screen and (max-width: 720px) {
 
 				.connect{
 					margin: 0 10%;
 	
+				}
+				.connectimg{
+					width:90%;
 				}
 			}
 			.connect p li{
