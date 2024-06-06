@@ -1,63 +1,53 @@
-Last updated 2023.01.03
-
-+------------+------------------+---------------------------------------+--------+--------+--------+---------+
-|    Date    |       Name       |                 Type                  | Gross  |  Fee   |  Net   | Balance |
-+------------+------------------+---------------------------------------+--------+--------+--------+---------+
-| 01/02/2022 | Donation         | Donation Payment                      |      1 |  -0.52 |   0.48 |    0.48 |
-| 01/02/2022 | Donation         | Donation Payment                      |      5 |  -0.63 |   4.37 |    4.85 |
-| 01/02/2022 | Vultr Holdings   | Express Checkout Payment              |     -5 |      0 |     -5 |       0 |
-| 01/02/2022 | Porkbun, LLC     | General Authorization                 |  -4.61 |      0 |  -4.61 |       0 |
-| 01/02/2022 | Porkbun, LLC     | Express Checkout Payment              |  -4.61 |      0 |  -4.61 |       0 |
-| 01/02/2022 | Porkbun, LLC     | General Authorization                 |  -4.61 |      0 |  -4.61 |       0 |
-| 01/06/2022 | Donation         | Donation Payment                      |     10 |  -0.78 |   9.22 |    9.22 |
-| 01/06/2022 | Donation         | Donation Payment                      |     25 |  -1.21 |  23.79 |   33.01 |
-| 01/13/2022 | Donation         | Donation Payment                      |      5 |  -0.63 |   4.37 |   37.38 |
-| 01/14/2022 | Donation         | Donation Payment                      |      1 |  -0.52 |   0.48 |   37.86 |
-| 01/15/2022 | Donation         | Donation Payment                      |     20 |  -1.07 |  18.93 |   56.79 |
-| 04/26/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |   61.16 |
-| 05/07/2022 | Vultr Holdings   | Express Checkout Payment              |    -25 |      0 |    -25 |   36.16 |
-| 05/12/2022 | Donation         | Donation Payment                      |     10 |  -0.78 |   9.22 |   45.38 |
-| 05/13/2022 | Donation         | Donation Payment                      |     10 |  -0.78 |   9.22 |    54.6 |
-| 05/23/2022 | Vultr Holdings   | Express Checkout Payment              |    -25 |      0 |    -25 |    29.6 |
-| 05/26/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |   33.97 |
-| 05/28/2022 | HOSTHATCH LLC    | Express Checkout Payment              |    -15 |      0 |    -15 |   18.97 |
-| 05/28/2022 | Donation         | Donation Payment                      |     25 |  -1.21 |  23.79 |   42.76 |
-| 06/04/2022 | Donation         | Donation Payment                      |     10 |  -0.78 |   9.22 |   51.98 |
-| 06/08/2022 | Donation         | Donation Payment                      |      5 |  -0.63 |   4.37 |   56.35 |
-| 06/10/2022 | Donation         | Donation Payment                      |      5 |  -0.63 |   4.37 |   60.72 |
-| 06/12/2022 | Donation         | Donation Payment                      |     20 |  -1.07 |  18.93 |   79.65 |
-| 06/14/2022 | HOSTHATCH LLC    | Express Checkout Payment              |    -15 |      0 |    -15 |   64.65 |
-| 06/15/2022 | HOSTHATCH LLC    | Express Checkout Payment              | -10.03 |      0 | -10.03 |   54.62 |
-| 06/18/2022 | Donation         | Donation Payment                      |    100 |  -3.38 |  96.62 |  151.24 |
-| 06/26/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  155.61 |
-| 07/15/2022 | Donation         | Donation Payment                      |     15 |  -0.92 |  14.08 |  169.69 |
-| 07/16/2022 | HOSTHATCH LLC    | Express Checkout Payment              |    -22 |      0 |    -22 |  147.69 |
-| 07/19/2022 | Donation         | Donation Payment                      |     25 |  -1.21 |  23.79 |  171.48 |
-| 07/22/2022 | Donation         | Donation Payment                      |     50 |  -1.94 |  48.06 |  219.54 |
-| 07/22/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  223.91 |
-| 07/22/2022 | Donation         | Donation Payment                      |      5 |  -0.63 |   4.37 |  228.28 |
-| 07/26/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  232.65 |
-| 08/14/2022 | HOSTHATCH LLC    | Express Checkout Payment              |    -22 |      0 |    -22 |  210.65 |
-| 08/22/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  215.02 |
-| 08/26/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  219.39 |
-| 09/14/2022 | HOSTHATCH LLC    | Express Checkout Payment              |    -22 |      0 |    -22 |  197.39 |
-| 09/22/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  201.76 |
-| 10/14/2022 | HOSTHATCH LLC    | Express Checkout Payment              |    -22 |      0 |    -22 |  179.76 |
-| 10/22/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  184.13 |
-| 10/25/2022 | Hydra Bot        | PreApproved Payment Bill User Payment |  -1.99 |      0 |  -1.99 |  182.14 |
-| 11/03/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  186.51 |
-| 11/09/2022 | Donation         | Donation Payment                      | 224.35 |  -6.97 | 217.38 |  403.89 |
-| 11/10/2022 | Porkbun, LLC     | General Authorization                 | -21.58 |      0 | -21.58 |  403.89 |
-| 11/10/2022 | Porkbun, LLC     | Express Checkout Payment              | -21.58 |      0 | -21.58 |  360.73 |
-| 11/10/2022 | Porkbun, LLC     | General Authorization                 | -21.58 |      0 | -21.58 |  382.31 |
-| 11/12/2022 | US Dedicated LLC | PreApproved Payment Bill User Payment | -67.85 |      0 | -67.85 |  314.46 |
-| 11/22/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  318.83 |
-| 11/25/2022 | Hydra Bot        | PreApproved Payment Bill User Payment |  -1.99 |      0 |  -1.99 |  316.84 |
-| 11/25/2022 | Donation         | Donation Payment                      |     60 |  -2.22 |  57.78 |  374.62 |
-| 11/29/2022 | US Dedicated LLC | PreApproved Payment Bill User Payment | -68.92 |      0 | -68.92 |   305.7 |
-| 12/03/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  310.07 |
-| 12/22/2022 | Donation         | Subscription Donation                 |      5 |  -0.63 |   4.37 |  314.44 |
-| 12/25/2022 | Hydra Bot        | PreApproved Payment Bill User Payment |  -1.99 |      0 |  -1.99 |  312.45 |
-| 12/30/2022 | US Dedicated LLC | PreApproved Payment Bill User Payment | -68.92 |      0 | -68.92 |  243.53 |
-| 12/30/2022 | Donation         | Donation Payment                      |     25 |  -1.21 |  23.79 |  267.32 |
-+------------+------------------+---------------------------------------+--------+--------+--------+---------+
++------------+------------------+---------------------------------------+---------+--------+---------+---------+
+| Date       | Name             | Type                                  | Gross   | Fee    | Net     | Balance |
++------------+------------------+---------------------------------------+---------+--------+---------+---------+
+| 01/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 271.69  |
+| 01/09/2023 | Donation         | Donation Payment                      | 100.00  | (3.38) | 96.62   | 368.31  |
+| 01/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 372.68  |
+| 01/25/2023 | Hydra Bot        | PreApproved Payment Bill User Payment | (3.99)  | 0.00   | (3.99)  | 368.69  |
+| 01/29/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 299.77  |
+| 01/29/2023 | Donation         | Donation Payment                      | 60.00   | (2.22) | 57.78   | 357.55  |
+| 01/30/2023 | Tempo Bot Ltd    | Subscription Payment                  | (4.99)  | 0.00   | (4.99)  | 352.56  |
+| 02/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 356.93  |
+| 02/07/2023 | Hydra Bot        | Payment Refund                        | 2.33    | 0.00   | 2.33    | 359.26  |
+| 02/11/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 407.32  |
+| 02/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 411.69  |
+| 02/28/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 342.77  |
+| 03/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 347.14  |
+| 03/21/2023 | Donation         | Donation Payment                      | 10.00   | (0.78) | 9.22    | 356.36  |
+| 03/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 360.73  |
+| 04/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 365.10  |
+| 04/04/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 296.18  |
+| 04/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 300.55  |
+| 04/30/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 231.63  |
+| 05/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 236.00  |
+| 05/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 240.37  |
+| 05/25/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 288.43  |
+| 05/31/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 219.51  |
+| 06/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 223.88  |
+| 06/16/2023 | Donation         | Donation Payment                      | 45.00   | (2.47) | 42.53   | 266.41  |
+| 06/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 270.78  |
+| 07/01/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 201.86  |
+| 07/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 206.23  |
+| 07/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 210.60  |
+| 08/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 214.97  |
+| 08/06/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 146.05  |
+| 08/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 150.42  |
+| 08/24/2023 | Donation         | Donation Payment                      | 20.00   | (1.07) | 18.93   | 169.35  |
+| 08/29/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 100.43  |
+| 09/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 104.80  |
+| 09/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 109.17  |
+| 10/02/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 40.25   |
+| 10/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 44.62   |
+| 10/06/2023 | Donation         | Donation Payment                      | 40.00   | (1.65) | 38.35   | 82.97   |
+| 10/20/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 131.03  |
+| 10/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 135.40  |
+| 11/02/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 66.48   |
+| 11/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 70.85   |
+| 11/06/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 118.91  |
+| 11/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 123.28  |
+| 12/01/2023 | Donation         | Donation Payment                      | 6.66    | (0.68) | 5.98    | 129.26  |
+| 12/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 133.63  |
+| 12/11/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 64.71   |
+| 12/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 69.08   |
++------------+------------------+---------------------------------------+---------+--------+---------+---------+
