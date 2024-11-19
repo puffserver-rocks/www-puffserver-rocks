@@ -3966,7 +3966,7 @@ input, select, textarea {
 				  }
 
 			.connect{
-				margin: 0 30%;
+				margin: 0 10%;
 				text-align: left;
 				color: white;
 
@@ -3993,5 +3993,15 @@ input, select, textarea {
 			}
 
 			.about{
-				max-width: 700px;
+				margin: 0 10%;
+			}
+
+			.rules{
+				margin: 0 10%;
+				text-align: left;
+				color: white;
+
+			}
+			.rules p li{
+				text-align: left;
 			}
