@@ -1,53 +1,49 @@
-+------------+------------------+---------------------------------------+---------+--------+---------+---------+
-| Date       | Name             | Type                                  | Gross   | Fee    | Net     | Balance |
-+------------+------------------+---------------------------------------+---------+--------+---------+---------+
-| 01/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 271.69  |
-| 01/09/2023 | Donation         | Donation Payment                      | 100.00  | (3.38) | 96.62   | 368.31  |
-| 01/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 372.68  |
-| 01/25/2023 | Hydra Bot        | PreApproved Payment Bill User Payment | (3.99)  | 0.00   | (3.99)  | 368.69  |
-| 01/29/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 299.77  |
-| 01/29/2023 | Donation         | Donation Payment                      | 60.00   | (2.22) | 57.78   | 357.55  |
-| 01/30/2023 | Tempo Bot Ltd    | Subscription Payment                  | (4.99)  | 0.00   | (4.99)  | 352.56  |
-| 02/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 356.93  |
-| 02/07/2023 | Hydra Bot        | Payment Refund                        | 2.33    | 0.00   | 2.33    | 359.26  |
-| 02/11/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 407.32  |
-| 02/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 411.69  |
-| 02/28/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 342.77  |
-| 03/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 347.14  |
-| 03/21/2023 | Donation         | Donation Payment                      | 10.00   | (0.78) | 9.22    | 356.36  |
-| 03/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 360.73  |
-| 04/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 365.10  |
-| 04/04/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 296.18  |
-| 04/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 300.55  |
-| 04/30/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 231.63  |
-| 05/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 236.00  |
-| 05/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 240.37  |
-| 05/25/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 288.43  |
-| 05/31/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 219.51  |
-| 06/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 223.88  |
-| 06/16/2023 | Donation         | Donation Payment                      | 45.00   | (2.47) | 42.53   | 266.41  |
-| 06/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 270.78  |
-| 07/01/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 201.86  |
-| 07/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 206.23  |
-| 07/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 210.60  |
-| 08/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 214.97  |
-| 08/06/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 146.05  |
-| 08/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 150.42  |
-| 08/24/2023 | Donation         | Donation Payment                      | 20.00   | (1.07) | 18.93   | 169.35  |
-| 08/29/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 100.43  |
-| 09/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 104.80  |
-| 09/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 109.17  |
-| 10/02/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 40.25   |
-| 10/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 44.62   |
-| 10/06/2023 | Donation         | Donation Payment                      | 40.00   | (1.65) | 38.35   | 82.97   |
-| 10/20/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 131.03  |
-| 10/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 135.40  |
-| 11/02/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 66.48   |
-| 11/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 70.85   |
-| 11/06/2023 | Donation         | Donation Payment                      | 50.00   | (1.94) | 48.06   | 118.91  |
-| 11/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 123.28  |
-| 12/01/2023 | Donation         | Donation Payment                      | 6.66    | (0.68) | 5.98    | 129.26  |
-| 12/03/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 133.63  |
-| 12/11/2023 | US Dedicated LLC | PreApproved Payment Bill User Payment | (68.92) | 0.00   | (68.92) | 64.71   |
-| 12/22/2023 | Donation         | Subscription Payment                  | 5.00    | (0.63) | 4.37    | 69.08   |
-+------------+------------------+---------------------------------------+---------+--------+---------+---------+
+Happy 2025 everyone!
+========================================
+Puff Community 2024 Financial Report
+========================================
+
+In 2024, Puff:
+
+Started with $69.08 in the bank.
+
+Took in $726.21 in donations! (thank you!)
+$44.15 of that went to PayPal fees
+Leaving us a net of $732.06 to apply to server expenses.
+
+Spent $827.04 on server rental:
+Currently ~70/mo
+
+Kicked music thot out cuz she was going to start charging money
+
+Ended 2024 with $4.37  in the bank
+
+You can see the full transaction report here:
+https://puffserver.rocks/#finance
+
+========================================
+What's next for Puff in 2025?
+
+Our projected expenses for 2025 are:
+$840.00 for server rental @ 70/mo
+~$15.00 for domain registration renewal
+
+Thus, our donation goal for 2025 is $900.
+
+========================================
+What would we do with donations beyond that?
+
+All donations go towards funding the services that Puff offers to the community.
+Do you have an idea for a service Puff can offer? Let us know!
+
+========================================
+How can I help?
+
+You can contribute financially via PayPal, check our website for details:
+
+https://puffserver.rocks/#donate
+
+========================================
+Thank You
+
+We appreciate all of you for hanging out and making this place what it is!
