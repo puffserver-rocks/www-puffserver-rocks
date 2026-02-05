@@ -183,12 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <sl-copy-button value="connect csgo.surf"></sl-copy-button>
           </div>
 
-          <div class="code">
-            connect scoutsknives.club
-            <sl-copy-button value="connect scoutsknives.club"></sl-copy-button>
-          </div>
-
-
           <div class="divider">
             <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 45px">
           </div>
@@ -206,7 +200,44 @@ document.addEventListener("DOMContentLoaded", () => {
         </center>
       </section>
 
-<section class="panel link-gifs">
+
+
+<!-- CONNECT CS2 -->
+      <section class="panel" id="connect-cs2">
+        <center>
+          <h1>CONNECT CS2</h1>
+			<p class="panel-text">
+            Steam <i>steam://connect</i> links no longer work — use console.
+          	</p>
+          <div class="code">
+            connect casual.puffserver.rocks
+            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
+          </div>
+
+            <div class="code">
+            connect scoutsknives.club
+            <sl-copy-button value="connect scoutsknives.club"></sl-copy-button>
+          </div>
+
+
+          <div class="divider">
+            <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 45px">
+          </div>
+
+		  <p class="panel-text">
+            Check out our friends from <a href="https://onlyzaps.gg" target="_blank" ><b>OnlyZaps.gg</b></a>
+          </p>
+
+		  <div class="code">
+            connect onlyzaps.gg
+            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
+          </div>
+
+        </center>
+      </section>
+
+
+      <section class="panel link-gifs">
   <a
     href="https://scoutsknives.club"
     target="_blank"
@@ -225,35 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <img src="images/csgodotsurf-dither.gif" alt="CSGO.Surf" />
   </a>
 </section>
-
-<!-- CONNECT CS2 -->
-      <section class="panel" id="connect-cs2">
-        <center>
-          <h1>CONNECT CS2</h1>
-			<p class="panel-text">
-            Steam <i>steam://connect</i> links no longer work — use console.
-          	</p>
-          <div class="code">
-            connect casual.puffserver.rocks
-            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
-          </div>
-
-          <div class="divider">
-            <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 45px">
-          </div>
-
-		  <p class="panel-text">
-            Check out our friends from <a href="https://onlyzaps.gg" target="_blank" ><b>OnlyZaps.gg</b></a>
-          </p>
-
-		  <div class="code">
-            connect onlyzaps.gg
-            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
-          </div>
-
-        </center>
-      </section>
-
       <!-- RULES -->
       <section class="panel" id="rules">
         <center>
@@ -411,8 +413,7 @@ document.addEventListener("DOMContentLoaded", async () => {
    <script>
 document.addEventListener("DOMContentLoaded", async () => {
   const STATUS_ENDPOINT = "/api/server-status.json"; 
-  // Example response:
-  // { "cs2": true, "surf": false, "scouts": true }
+
 
   let statusData = {};
 
