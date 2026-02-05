@@ -1,189 +1,454 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>PUFF PUFF</title>
+  <link rel="stylesheet" href="assets/css/main.css">
 
-	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <!-- Shoelace (copy button) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="/style.css" />
+  <!-- jQuery (matches surf-index.html) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Fonts (matches surf-index.html) -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUFF PUFF</title>
+  <link rel="icon" href="https://puffserver.rocks/images/favicon.png" type="image/x-icon" />
+
+  <!-- Same randomized background-video behavior as surf-index.html -->
+  <script>
+    $(document).ready(function () {
+      const videos = [
+        "images/comp_2.mp4"
+      ];
+
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      const shuffledVideos = shuffle([...videos]);
+      const videoEl = document.getElementById("bg-video");
+      const sourceEl = document.getElementById("bg-source");
+
+      let currentIndex = Math.floor(Math.random() * shuffledVideos.length);
+
+      function playNextVideo() {
+        sourceEl.src = shuffledVideos[currentIndex];
+        videoEl.load();
+        videoEl.play().catch(() => {});
+        currentIndex = (currentIndex + 1) % shuffledVideos.length;
+      }
+
+      videoEl.addEventListener("ended", playNextVideo);
+      playNextVideo();
+    });
+  </script>
+  
+   <!-- Primary Meta Tags -->
+<title>PUFF PUFF</title>
+<meta name="title" content="PUFF PUFF" />
+<meta name="description" content="Counter-Strike Community with CS:GO and CS2 Servers." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://puffserver.rocks/" />
+<meta property="og:title" content="PUFF PUFF" />
+<meta property="og:description" content="Counter-Strike Community with CS:GO and CS2 Servers." />
+<meta property="og:image" content="/images/puff-meta.png" />
+
+<!-- X (Twitter) -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://puffserver.rocks/" />
+<meta property="twitter:title" content="PUFF PUFF" />
+<meta property="twitter:description" content="Counter-Strike Community with CS:GO and CS2 Servers." />
+<meta property="twitter:image" content="/images/puff-meta.png" />
 
 </head>
-<body class="is-preload">
-	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
 
+<body>
+<!-- NAV -->
+ <nav class="corner-nav" aria-label="Site">
+  <button class="corner-nav__btn" type="button" aria-expanded="false" aria-controls="cornerNavMenu">
+    <span class="corner-nav__icon" aria-hidden="true"></span>
+    <span class="sr-only">Open menu</span>
+  </button>
 
-	<!-- Sidebar -->
-	<section id="sidebar">
-		<div class="inner">
-			<nav>
-				<ul>
-					<li><a href="#connect">Connect</a></li>
-					<li><a href="#rules">Rules</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#finance">Finances</a></li>
-					<li><a href="#donate">Donate</a></li>
-					<li><a href="#discord">Discord</a></li>
-				</ul>
-			</nav>
-		</div>
-	</section>
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- marquee -->
-<div class="marquee">
-	<ul class="marquee__content">
-	  <li>PUFF CS:GO SERVERS ARE <b>ONLINE</b> JOIN US</li>
-	  <li>PUFF CS2 SERVERS ARE <b>ONLINE</b> JOIN US</li>
-	  <li>PUFF CS:GO SERVERS ARE <b>ONLINE</b> JOIN US</li>
-
-	</ul>
-
-	<ul aria-hidden="true" class="marquee__content">
-		<li>PUFF CS2 SERVERS ARE <b>ONLINE</b> JOIN US</li>
-	  <li>PUFF CS:GO SERVERS ARE <b>ONLINE</b> JOIN US</li>
-	  <li>PUFF CS2 SERVERS ARE <b>ONLINE</b> JOIN US</li>
-	</ul>
+  <div class="corner-nav__menu" id="cornerNavMenu" hidden>
+    <a href="#top">Home</a>
+    <a href="#connect-csgo">Connect CS:GO</a>
+	<a href="#connect-cs2">Connect CS2</a>
+	<a href="#rules">Rules</a>
+	<a href="#About">About</a>
+    <a href="#discord">Discord</a>
   </div>
-		<!-- Intro -->
-		<section id="Intro" class="wrapper style1 fullscreen fade-up">
+</nav>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".corner-nav");
+  if (!nav) return;
 
-			<div class="content" >
+  const btn = nav.querySelector(".corner-nav__btn");
+  const menu = nav.querySelector(".corner-nav__menu");
+  if (!btn || !menu) return;
 
-				<center>
-					<img src="images/PUFF_PUFF-logo.png" style="width: 45%">
+  const openMenu = () => {
+    nav.classList.add("is-open");
+    menu.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+  };
 
-				</center>
-				<p>Welcome to PUFF: Check out our casual, movement and 10-man CS:GO servers.</p>
-			</div>
-		</section>
+  const closeMenu = () => {
+    nav.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+    setTimeout(() => (menu.hidden = true), 160);
+  };
 
-		<!-- Connect -->
-		<section id="connect" class="wrapper style1 fullscreen fade-up">
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    nav.classList.contains("is-open") ? closeMenu() : openMenu();
+  });
 
-			<div class="content" >
-				<center>
+  menu.addEventListener("click", (e) => e.stopPropagation());
 
-					<div id="connect-vid">
-						<video src="https://puffserver.rocks/images/comp_2.mp4" autoPlay loop muted/>
+  document.addEventListener("click", () => {
+    if (nav.classList.contains("is-open")) closeMenu();
+  });
 
-					  </div>
-					<br>
-					<div class="connect">
-						<p>
-							<h4>How to connect to CS:GO community servers:</h4>
-							<br>
-							<li>Right-click on CS2 in your Steam Library and select "Properties"</li>
-							<li>Under the Betas header of the Properties popup, click the Beta Participation dropdown and select "csgo_legacy - Legacy Version of CS:GO"</li>
-							<li>Close the Properties popup and wait for the old client to download</li>
-							<li>Launch CS from Steam. Select the csgo legacy version when prompted.</li>
-							<br>
-							steam://connect links no longer works. You will need to type "<i>connect casual.puffserver.rocks</i>" in console
-							<br>
-							<br>
-							<p>---<img src="images/PUFF_PUFF-logo.png" style="width: 45px">---</p>
-							<h4>csgo.surf</h4>
-							<i>connect csgo.surf</i>
-							<br>
-							<p>---<img src="images/PUFF_PUFF-logo.png" style="width: 45px">---</p>
-							<br>
-							<h4>scoutsknives.club</h4>
-							<i>connect scoutsknives.club</i>
-					</p>
-				</div>
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) closeMenu();
+  });
+});
+</script>
 
-			</center>
-			</div>
-		</section>
 
-		<!-- Rules -->
-		<section id="rules" class="wrapper style1 fullscreen">
-			<div class="content">
-				<center>
-					<h2>RULES</h2>
-					<div class="rules">
+  <!-- Background video -->
+	<video autoplay muted playsinline loop id="bg-video">
+  <source id="bg-source" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-					<p>
-						<h4>Join us if:</h4>
-						<li>You want to have fun</li>
-						<li>You're okay listening to, or participating in, silly conversations</li>
-						<li>You're okay getting cussed at when you destroy someone</li>
-						<li>You're okay sometimes getting destroyed (it's okay, you can rage quit if you need to and come back anytime)</li>
-						<br>
-						<h4>We don't want you and will boot you if:</h4>
-						<li>You cheat</li>
-						<li>You're out to make people feel bad</li>
-						<li>You want to harp on sticky subjects, like politics</li>
-						<li>You engage in chat/mic/radio spamming</li>
-						<li>You say, reinforce, or display non-inclusive language</li>
-						<li>You make any other member of puff feel unwelcome</li>
-						<li>You ignore admin requests that pertain to the above rules.</li>
-						<li>If you are asked to stop doing/saying something and you continue, you will be kicked/banned</li>
 
-					</p>
-				</div>
-				</center>
-			</div>
-		</section>
-<!-- About -->
-<section id="about" class="wrapper style1 fullscreen fade-up">
-	<center>
-	<h2>ABOUT</h2>
-			<br>
-	<div class="about" >
 
-		<p>We here in <img src="images/PUFF_PUFF-logo.png" style="width: 45px"> are proud to be an open community welcoming folks no matter who they are or which button they use as push-to-talk, all of whom get along swimmingly (provided nobody eats their popcorn with a spoon)! Of course, given all our different backgrounds, something you might say that seems innocent to you may not be so innocent to others, so if you're ever in doubt, we recommend you simply avoid the topic/comment altogether!
+  <main class="page">
+    <div class="stack">
 
-			Sometimes admins may give you a warning based on their interpretation of our community rules and expectations, and may work to quickly end a conversation you thought was okay. Their objective is to keep our community friendly, civil, and welcoming, so trust that that is their intention when they do step in, regardless of their personal perspective. Even if you felt everything was fine before they stepped in, we ask that you trust their judgement.
+      <!-- HERO -->
+      <section class="panel" id="top">
+        <center>
+          
+            <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 90px; padding: 6px;">
+                    <p style="color: white; font-family: 'Fira Code', monospace;">
+            Welcome to PUFF: Check out our casual and movement servers.
+          </p>
+        </center>
+      </section>
+	  <section class="panel marquee-section">
+      <div class="marquee">
+        <div class="marquee__track" id="server-marquee">
 
-			Community spaces are intended to provide a venue for dialogue that fits the implied topics (i.e. don't dwell on your cat's litter box habits in #general!) in ways that meet our community rules and guidelines. If you see any activity that breaks these rules, let an admin know and they will address it if they are not already working to do so.
+      <ul class="marquee__content">
+        <li data-server="cs2">
+          PUFF CS2 SERVER IS <b class="status">CHECKING</b> JOIN US
+        </li>
+        <li data-server="surf">
+          PUFF SURF SERVER IS <b class="status">CHECKING</b> JOIN US
+        </li>
+        <li data-server="scouts">
+          PUFF SCOUTS & KNIVES SERVER IS <b class="status">CHECKING</b> JOIN US
+        </li>
+      </ul>
 
-			If you're asked to move on or given a warning, please don't panic, but also don't publicly contest. Their objective is to end a problematic conversation trend, not to publicly call you out. Follow their guidance and there's nothing to worry about. If, however, you do violate our community rules despite warnings, you are at risk of being banned, so do bear this in mind.
+       </div>
+          </div>
+        </section>  
 
-			All that aside, your participation in <img src="images/PUFF_PUFF-logo.png" style="width: 45px"> makes it what it is, and we're so pleased you're here!</p>
-	</div>
+      <!-- CONNECT CS:GO -->
+      <section class="panel" id="connect-csgo">
+        <center>
+          <h1>CONNECT CS:GO</h1>
+
+          <p class="panel-text">
+            Steam <i>steam://connect</i> links no longer work — use console.
+          </p>
+
+          <div class="code">
+            connect csgo.surf
+            <sl-copy-button value="connect csgo.surf"></sl-copy-button>
+          </div>
+
+          <div class="code">
+            connect scoutsknives.club
+            <sl-copy-button value="connect scoutsknives.club"></sl-copy-button>
+          </div>
+
+
+          <div class="divider">
+            <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 45px">
+          </div>
+
+          <div class="list">
+            <div class="list-title">How to connect to CS:GO community servers</div>
+            <ul>
+              <li>Right-click CS2 in Steam → <b>Properties</b></li>
+              <li>Under <b>Betas</b> → select <b>csgo_legacy</b></li>
+              <li>Wait for the legacy client to download</li>
+              <li>Launch CS and pick the legacy version</li>
+              <li>Open console and paste one of the <b>connect</b> commands above</li>
+            </ul>
+          </div>
+        </center>
+      </section>
+
+<section class="panel link-gifs">
+  <a
+    href="https://scoutsknives.club"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="gif-link"
+  >
+    <img src="images/scoutsknives-dither.gif" alt="Scout's Knives" />
+  </a>
+
+  <a
+    href="https://csgo.surf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="gif-link"
+  >
+    <img src="images/csgodotsurf-dither.gif" alt="CSGO.Surf" />
+  </a>
 </section>
-</center>
-		<!-- Discord join info -->
-		<section id="discord" class="wrapper style1 fullscreen fade-up">
-			<div class="content">
-				<center>
-					<h2>JOIN US</h2>
-					<br>
-					<br>
-					<iframe src="https://discord.com/widget?id=850819036790521886&theme=dark" width="60%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-				</center>
-			</div>
-		</section>
 
-		<!-- Footer -->
-		<footer id="footer" class="wrapper style1">
-			<div class="inner">
-				<ul class="menu">
-					<li>&copy; 2022 PUFF SERVER All rights reserved.</li>
-					<li><a href="#connect">Connect</a></li>
-					<li><a href="#rules">Rules</a></li>
-					<li><a href="#discord">Discord</a></li>
-					<li><a href="#donate">Donate</a></li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+<!-- CONNECT CS2 -->
+      <section class="panel" id="connect-cs2">
+        <center>
+          <h1>CONNECT CS2</h1>
+			<p class="panel-text">
+            Steam <i>steam://connect</i> links no longer work — use console.
+          	</p>
+          <div class="code">
+            connect casual.puffserver.rocks
+            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
+          </div>
+
+          <div class="divider">
+            <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 45px">
+          </div>
+
+		  <p class="panel-text">
+            Check out our friends from <a href="https://onlyzaps.gg" target="_blank" ><b>OnlyZaps.gg</b></a>
+          </p>
+
+		  <div class="code">
+            connect onlyzaps.gg
+            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
+          </div>
+
+        </center>
+      </section>
+
+      <!-- RULES -->
+      <section class="panel" id="rules">
+        <center>
+          <h1>RULES</h1>
+
+          <div class="list">
+            <div class="list-title">Join us if</div>
+            <ul>
+              <li>You want to have fun</li>
+              <li>You’re okay with silly conversations</li>
+              <li>You’re okay getting cussed at when you destroy someone</li>
+              <li>You’re okay sometimes getting destroyed (rage quit is allowed)</li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <div class="list-title">We’ll boot you if</div>
+            <ul>
+              <li>You cheat</li>
+              <li>You’re out to make people feel bad</li>
+              <li>You harp on sticky subjects like politics</li>
+              <li>You spam chat/mic/radio</li>
+              <li>You use non-inclusive language</li>
+              <li>You make others feel unwelcome</li>
+              <li>You ignore admin requests</li>
+              <li>You keep doing something after being asked to stop</li>
+            </ul>
+          </div>
+        </center>
+      </section>
+
+      <!-- ABOUT -->
+		<section class="panel about about-right" id="About">
+	        <center>
+          <h1>ABOUT</h1>
+
+            <p class="panel-text">
+    		We’re proud to be an open community welcoming folks no matter who they are or which button
+    		they use as push-to-talk (provided nobody eats their popcorn with a spoon).
+    		If you’re ever in doubt, skip the topic/comment.
+    		Admins may step in to keep things friendly, civil, and welcoming. Please trust their judgment.
+  			</p>
+
+          <div class="divider">
+            <img src="https://puffserver.rocks/images/PUFF_PUFF-logo.png" style="width: 45px">
+          </div>
+
+          <p class="panel-text" style="max-width: 72ch;">
+            If you see activity that breaks the rules, let an admin know.
+            If you’re asked to move on, don’t panic... just follow guidance.
+            Your participation makes PUFF what it is. We’re glad you’re here!
+          </p>
+        </center>
+      </section>
+
+      <!-- DISCORD -->
+      <section class="panel" id="discord">
+        <center>
+          <h1>DISCORD</h1>
+          <iframe
+            src="https://discord.com/widget?id=850819036790521886&theme=dark"
+            width="100%"
+            height="420"
+            allowtransparency="true"
+            frameborder="0"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            style="max-width: 720px; border: 1px solid white;"
+          ></iframe>
+        </center>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="panel footer">
+        <center>
+          <p class="panel-text">© 2026 PUFF SERVER — All rights reserved.</p>
+          <p class="panel-text">
+            <a class="footer-link" href="#connect">Connect</a> ·
+            <a class="footer-link" href="#rules">Rules</a> ·
+            <a class="footer-link" href="#about">About</a> ·
+            <a class="footer-link" href="#discord">Discord</a>
+          </p>
+        </center>
+      </footer>
+
+    </div>
+  </main>
+
+
+  <!-- JS -->
+<!-- MARQUEE SCROLL -->
+ <script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const track = document.getElementById("server-marquee");
+  if (!track) return;
+
+  const list = track.querySelector(".marquee__content");
+  if (!list) return;
+
+  // Ensure we only ever have ONE clone
+  track.querySelectorAll(".marquee__content[aria-hidden='true']").forEach(n => n.remove());
+
+  // Clone the list for seamless looping
+  const clone = list.cloneNode(true);
+  clone.setAttribute("aria-hidden", "true");
+  track.appendChild(clone);
+
+  // Wait for web fonts to load so widths don’t change mid-animation
+  if (document.fonts && document.fonts.ready) {
+    try { await document.fonts.ready; } catch {}
+  }
+
+  let anim;
+
+  const start = () => {
+    // Stop old animation if any
+    if (anim) anim.cancel();
+
+    // Measure the original list width in pixels
+    const w = list.getBoundingClientRect().width;
+
+    // If width is 0, don’t animate
+    if (!w) return;
+
+    // Speed: pixels per second (tweak this)
+    const pxPerSecond = 90;
+    const duration = (w / pxPerSecond) * 1000;
+
+    // Animate the track exactly -w px, then loop
+    anim = track.animate(
+      [
+        { transform: "translate3d(0,0,0)" },
+        { transform: `translate3d(${-w}px,0,0)` }
+      ],
+      {
+        duration,
+        iterations: Infinity,
+        easing: "linear"
+      }
+    );
+  };
+
+  start();
+
+  // Recompute on resize (debounced)
+  let t;
+  window.addEventListener("resize", () => {
+    clearTimeout(t);
+    t = setTimeout(start, 150);
+  });
+});
+</script>
+
+
+  <!-- STATUS -->
+   <script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const STATUS_ENDPOINT = "/api/server-status.json"; 
+  // Example response:
+  // { "cs2": true, "surf": false, "scouts": true }
+
+  let statusData = {};
+
+  try {
+    const res = await fetch(STATUS_ENDPOINT, { cache: "no-store" });
+    if (!res.ok) throw new Error("Bad response");
+    statusData = await res.json();
+  } catch (err) {
+    console.warn("Server status unavailable, defaulting OFFLINE");
+  }
+
+  const items = document.querySelectorAll("[data-server]");
+
+  items.forEach(item => {
+    const key = item.dataset.server;
+    const statusEl = item.querySelector(".status");
+    const isOnline = statusData[key];
+
+    if (isOnline === true) {
+      statusEl.textContent = "ONLINE";
+      statusEl.classList.add("online");
+    } else {
+      statusEl.textContent = "OFFLINE";
+      statusEl.classList.add("offline");
+    }
+
+    statusEl.classList.remove("checking");
+  });
+
+  /* Keep marquee seamless by cloning content */
+  const track = document.getElementById("server-marquee");
+  const lists = track.querySelectorAll(".marquee__content");
+  if (lists.length === 2) {
+    lists[1].innerHTML = lists[0].innerHTML;
+  }
+});
+</script>
 </body>
 </html>
