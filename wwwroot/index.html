@@ -155,13 +155,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <ul class="marquee__content">
         <li data-server="cs2">
-          PUFF CS2 SERVER IS <b class="status">CHECKING</b>
+          PUFF CASUAL SERVER IS <b class="status">CHECKING</b>
+        <a href="steam://connect/puffserver.rocks" class="connect-btn">CONNECT</a>
+
         </li>
         <li data-server="surf">
-          PUFF SURF SERVER IS <b class="status">CHECKING</b>
+        PUFF SURF SERVER IS <b class="status">CHECKING </b>
+        <a href="steam://connect/csgo.surf" class="connect-btn">CONNECT</a>
         </li>
+
         <li data-server="scouts">
           PUFF SCOUTS & KNIVES SERVER IS <b class="status">CHECKING</b>
+           <a href="steam://connect/scoutknives.club" class="connect-btn">CONNECT</a>
         </li>
       </ul>
 
@@ -174,13 +179,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <center>
           <h1>CONNECT CS:GO</h1>
 
-          <p class="panel-text">
-            Steam <i>steam://connect</i> links no longer work — use console.
-          </p>
-
           <div class="code">
             connect csgo.surf
             <sl-copy-button value="connect csgo.surf"></sl-copy-button>
+          </div>
+          <div class="code-buttons">
+          <!-- CONNECT button -->
+          <a href="steam://connect/csgo.surf" class="button">
+          <span class="button-top">CONNECT</span>
+          <span class="button-bottom"></span>
+          <span class="button-base"></span>
+          </a>
           </div>
 
           <div class="divider">
@@ -206,17 +215,31 @@ document.addEventListener("DOMContentLoaded", () => {
       <section class="panel" id="connect-cs2">
         <center>
           <h1>CONNECT CS2</h1>
-			<p class="panel-text">
-            Steam <i>steam://connect</i> links no longer work — use console.
-          	</p>
+
           <div class="code">
             connect casual.puffserver.rocks
             <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
+          </div>
+          <div class="code-buttons">
+          <!-- CONNECT button -->
+          <a href="steam://connect/puffserver.rocks" class="button">
+          <span class="button-top">CONNECT</span>
+          <span class="button-bottom"></span>
+          <span class="button-base"></span>
+          </a>
           </div>
 
             <div class="code">
             connect scoutsknives.club
             <sl-copy-button value="connect scoutsknives.club"></sl-copy-button>
+          </div>
+          <div class="code-buttons">
+          <!-- CONNECT button -->
+          <a href="steam://connect/scoutsknives.club" class="button">
+          <span class="button-top">CONNECT</span>
+          <span class="button-bottom"></span>
+          <span class="button-base"></span>
+          </a>
           </div>
 
 
@@ -230,7 +253,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		  <div class="code">
             connect onlyzaps.gg
-            <sl-copy-button value="connect casual.puffserver.rocks"></sl-copy-button>
+            <sl-copy-button value="connect onlyzaps.gg"></sl-copy-button>
+          </div>
+          <div class="code-buttons">
+          <!-- CONNECT button -->
+          <a href="steam://connect/onlyzaps.gg" class="button">
+          <span class="button-top">CONNECT</span>
+          <span class="button-bottom"></span>
+          <span class="button-base"></span>
+          </a>
           </div>
 
         </center>
@@ -346,7 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!-- JS -->
 <!-- MARQUEE SCROLL -->
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", async () => {
   const track = document.getElementById("server-marquee");
   if (!track) return;
@@ -354,15 +385,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const list = track.querySelector(".marquee__content");
   if (!list) return;
 
-  // Ensure we only ever have ONE clone
   track.querySelectorAll(".marquee__content[aria-hidden='true']").forEach(n => n.remove());
 
-  // Clone the list for seamless looping
   const clone = list.cloneNode(true);
   clone.setAttribute("aria-hidden", "true");
   track.appendChild(clone);
 
-  // Wait for web fonts to load so widths don’t change mid-animation
   if (document.fonts && document.fonts.ready) {
     try { await document.fonts.ready; } catch {}
   }
@@ -370,20 +398,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   let anim;
 
   const start = () => {
-    // Stop old animation if any
     if (anim) anim.cancel();
 
-    // Measure the original list width in pixels
     const w = list.getBoundingClientRect().width;
-
-    // If width is 0, don’t animate
     if (!w) return;
 
-    // Speed: pixels per second (tweak this)
     const pxPerSecond = 90;
     const duration = (w / pxPerSecond) * 1000;
 
-    // Animate the track exactly -w px, then loop
     anim = track.animate(
       [
         { transform: "translate3d(0,0,0)" },
@@ -395,9 +417,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         easing: "linear"
       }
     );
+
+    // default speed
+    anim.playbackRate = 1;
   };
 
   start();
+
+  // ✅ Slow down on hover
+  track.addEventListener("mouseenter", () => {
+    if (anim) anim.playbackRate = 0.35; // 35% speed
+  });
+
+  track.addEventListener("mouseleave", () => {
+    if (anim) anim.playbackRate = 1;    // normal speed
+  });
 
   // Recompute on resize (debounced)
   let t;
@@ -407,6 +441,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 </script>
+
 
 
   <!-- STATUS -->
