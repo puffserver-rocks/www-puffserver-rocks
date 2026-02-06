@@ -156,17 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul class="marquee__content">
         <li data-server="cs2">
           PUFF CASUAL SERVER IS <b class="status">CHECKING</b>
-        <a href="steam://connect/216.128.144.149:27015" class="connect-btn is-offline">CONNECT</a>
+        <a href="steam://connect/216.128.144.149:27015" class="connect-btn is-offline" data-server="cs2">CONNECT</a>
 
         </li>
         <li data-server="surf">
         PUFF SURF SERVER IS <b class="status">CHECKING </b>
-        <a href="steam://connect/14.1.30.195:27015" class="connect-btn is-offline">CONNECT</a>
+        <a href="steam://connect/14.1.30.195:27015" class="connect-btn is-offline" data-server="surf">CONNECT</a>
         </li>
 
         <li data-server="scouts">
           PUFF SCOUTS & KNIVES SERVER IS <b class="status">CHECKING</b>
-           <a href="steam://connect/14.1.30.196:27015" class="connect-btn is-offline">CONNECT</a>
+           <a href="steam://connect/14.1.30.196:27015" class="connect-btn is-offline" data-server="scouts">CONNECT</a>
         </li>
       </ul>
 
@@ -377,25 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   <!-- JS -->
-   <!-- MARQUEE OFFLINE BLOCK -->
-    <script>
-      function setServerStatus(server, isOnline, address) {
-  const btn = document.querySelector(
-    `.connect-btn[data-server="${server}"]`
-  );
-
-  if (!btn) return;
-
-  if (isOnline) {
-    btn.classList.remove("is-offline");
-    btn.href = `steam://connect/${address}`;
-  } else {
-    btn.classList.add("is-offline");
-    btn.removeAttribute("href");
-  }
-}
-
-    </script>
 <!-- MARQUEE SCROLL -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
@@ -464,14 +445,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-  <!-- STATUS -->
-   <script>
+  <script>
 document.addEventListener("DOMContentLoaded", async () => {
-  const STATUS_ENDPOINT = "/api/server-status.json"; 
-
+  const STATUS_ENDPOINT = "/api/server-status.json";
 
   let statusData = {};
-
   try {
     const res = await fetch(STATUS_ENDPOINT, { cache: "no-store" });
     if (!res.ok) throw new Error("Bad response");
@@ -480,31 +458,52 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("Server status unavailable, defaulting OFFLINE");
   }
 
-  const items = document.querySelectorAll("[data-server]");
+  // Helper: toggle ALL matching buttons (original + clone)
+  function setServerStatus(serverKey, isOnline, address) {
+    document.querySelectorAll(`.connect-btn[data-server="${serverKey}"]`).forEach(btn => {
+      if (isOnline) {
+        btn.classList.add("is-online");
+        btn.classList.remove("is-offline");
+        btn.href = `steam://connect/${address}`;
+      } else {
+        btn.classList.add("is-offline");
+        btn.classList.remove("is-online");
+        btn.removeAttribute("href");
+      }
+    });
+  }
 
-  items.forEach(item => {
-    const key = item.dataset.server;
-    const statusEl = item.querySelector(".status");
-    const isOnline = statusData[key];
+  // Only target the marquee <li> rows (NOT every [data-server] element)
+  const rows = document.querySelectorAll(".marquee__content > li[data-server]");
 
-    if (isOnline === true) {
-      statusEl.textContent = "ONLINE";
-      statusEl.classList.add("online");
-    } else {
-      statusEl.textContent = "OFFLINE";
-      statusEl.classList.add("offline");
-    }
+  rows.forEach(li => {
+    const key = li.dataset.server;
+    const statusEl = li.querySelector(".status");
+    if (!statusEl) return;
 
+    const isOnline = statusData[key] === true;
+
+    statusEl.textContent = isOnline ? "ONLINE" : "OFFLINE";
+    statusEl.classList.toggle("online", isOnline);
+    statusEl.classList.toggle("offline", !isOnline);
     statusEl.classList.remove("checking");
+
+    // Grab the server IP/port from the button that already exists in the markup
+    const btn = li.querySelector(`.connect-btn[data-server="${key}"]`);
+    const address = btn?.getAttribute("href")?.replace("steam://connect/", "") || "";
+
+    // ✅ NOW we actually toggle the button state
+    setServerStatus(key, isOnline, address);
   });
 
-  /* Keep marquee seamless by cloning content */
+  // Keep the cloned list in sync AFTER updating statuses/buttons
   const track = document.getElementById("server-marquee");
-  const lists = track.querySelectorAll(".marquee__content");
-  if (lists.length === 2) {
+  const lists = track?.querySelectorAll(".marquee__content");
+  if (lists && lists.length === 2) {
     lists[1].innerHTML = lists[0].innerHTML;
   }
 });
 </script>
+
 </body>
 </html>
