@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="code-buttons">
           <!-- CONNECT button -->
-          <a href="steam://connect/14.1.30.195:27015" class="button">
+          <a href="steam://connect/14.1.30.195:27015" class="button is-offline" data-server="surf">
           <span class="button-top">CONNECT</span>
           <span class="button-bottom"></span>
           <span class="button-base"></span>
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="code-buttons">
           <!-- CONNECT button -->
-          <a href="steam://connect/216.128.144.149:27015" class="button">
+          <a href="steam://connect/216.128.144.149:27015" class="button is-offline" data-server="cs2">
           <span class="button-top">CONNECT</span>
           <span class="button-bottom"></span>
           <span class="button-base"></span>
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="code-buttons">
           <!-- CONNECT button -->
-          <a href="steam://connect/14.1.30.196:27015" class="button">
+          <a href="steam://connect/14.1.30.196:27015" class="button is-offline" data-server="scouts">
           <span class="button-top">CONNECT</span>
           <span class="button-bottom"></span>
           <span class="button-base"></span>
@@ -458,9 +458,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("Server status unavailable, defaulting OFFLINE");
   }
 
-  // Helper: toggle ALL matching buttons (original + clone)
+  // Toggle small marquee buttons + big code-buttons buttons
   function setServerStatus(serverKey, isOnline, address) {
+    // marquee connect buttons (and their cloned copies)
     document.querySelectorAll(`.connect-btn[data-server="${serverKey}"]`).forEach(btn => {
+      if (isOnline) {
+        btn.classList.add("is-online");
+        btn.classList.remove("is-offline");
+        btn.href = `steam://connect/${address}`;
+      } else {
+        btn.classList.add("is-offline");
+        btn.classList.remove("is-online");
+        btn.removeAttribute("href");
+      }
+    });
+
+    // big connect buttons under .code-buttons
+    document.querySelectorAll(`.code-buttons .button[data-server="${serverKey}"]`).forEach(btn => {
       if (isOnline) {
         btn.classList.add("is-online");
         btn.classList.remove("is-offline");
@@ -473,7 +487,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  // Only target the marquee <li> rows (NOT every [data-server] element)
+  // Read status + address from the marquee rows (single source of truth)
   const rows = document.querySelectorAll(".marquee__content > li[data-server]");
 
   rows.forEach(li => {
@@ -488,11 +502,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     statusEl.classList.toggle("offline", !isOnline);
     statusEl.classList.remove("checking");
 
-    // Grab the server IP/port from the button that already exists in the markup
-    const btn = li.querySelector(`.connect-btn[data-server="${key}"]`);
-    const address = btn?.getAttribute("href")?.replace("steam://connect/", "") || "";
+    // Get address from the marquee button's href
+    const marqueeBtn = li.querySelector(`.connect-btn[data-server="${key}"]`);
+    const address =
+      marqueeBtn?.getAttribute("href")?.replace("steam://connect/", "") || "";
 
-    // ✅ NOW we actually toggle the button state
     setServerStatus(key, isOnline, address);
   });
 
@@ -503,6 +517,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     lists[1].innerHTML = lists[0].innerHTML;
   }
 });
+
 </script>
 
 </body>

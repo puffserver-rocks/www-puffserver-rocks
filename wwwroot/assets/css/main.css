@@ -575,3 +575,92 @@ font-size:10px;
 font-style: italic;
 }
 
+/* Offline state */
+.code-buttons .button.is-offline {
+  pointer-events: none;
+  cursor: not-allowed;
+  animation: dead-flicker 3.5s infinite;
+}
+
+/* Text on the face */
+.code-buttons .button.is-offline .button-top {
+  position: relative;
+  color: rgba(255,180,180,0.85);
+  text-shadow:
+    0 0 4px rgba(255,0,0,0.25),
+    0 1px rgba(0,0,0,0.8);
+}
+
+/* ✅ THIS is what makes it red (the face gradient) */
+.code-buttons .button.is-offline .button-top::after {
+  background-image: radial-gradient(#5a1b1b, #2a0c0c) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.08),
+    inset 0 -10px 20px rgba(0,0,0,0.7),
+    0 1px 2px rgba(0,0,0,0.7) !important;
+}
+
+/* Cracks overlay */
+
+
+/* Add crack layers */
+.code-buttons .button.is-offline .button-top::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 4px;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, transparent 48%, rgba(255,220,220,0.35) 50%, transparent 52%),
+    linear-gradient(35deg, transparent 46%, rgba(255,200,200,0.22) 48%, transparent 50%),
+    linear-gradient(-40deg, transparent 47%, rgba(255,180,180,0.18) 49%, transparent 51%),
+    repeating-linear-gradient(
+      70deg,
+      transparent,
+      transparent 14px,
+      rgba(255,200,200,0.14) 15px,
+      transparent 16px
+    );
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+/* Flicker using brightness */
+@keyframes dead-flicker {
+  0%, 100% { filter: brightness(0.75) contrast(1.05) saturate(1.2); }
+  45% { filter: brightness(0.65) contrast(1.05) saturate(1.2); }
+  50% { filter: brightness(0.52) contrast(1.1) saturate(1.25); }
+  55% { filter: brightness(0.62) contrast(1.05) saturate(1.2); }
+}
+
+/* Prevent press animation */
+.code-buttons .button.is-offline:active .button-top,
+.code-buttons .button.is-offline:hover .button-top {
+  transform: none;
+}
+/* OFFLINE = force every layer to dead-red, kill any green/glow */
+.code-buttons .button.is-offline .button-top::after {
+  background-image: radial-gradient(#5a1b1b, #220707) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.08),
+    inset 0 -14px 26px rgba(0,0,0,0.75),
+    0 1px 2px rgba(0,0,0,0.8) !important;
+}
+
+/* this is the strip you're still seeing */
+.code-buttons .button.is-offline .button-bottom {
+  background-color: #220707 !important;
+  background-image: radial-gradient(#3b0f0f, #160404) !important;
+  box-shadow:
+    0 2px 3px rgba(0,0,0,0.65),
+    inset 0 -1px 3px 3px rgba(0,0,0,0.55) !important;
+}
+
+/* darken the base plate too */
+.code-buttons .button.is-offline .button-base {
+  background-color: rgba(40, 0, 0, 0.35) !important;
+  box-shadow:
+    0 1px 1px rgba(255,255,255,0.15),
+    inset 0 2px 2px rgba(0,0,0,0.45) !important;
+}
+
