@@ -168,7 +168,6 @@ body::before {
 .panel li {
   text-align: left;
   padding-top: 0;
-  font-size: 15px;
   line-height: 1.45;
   color: #fff;
 }
@@ -456,6 +455,19 @@ CONNECT BUTTON
   transform: translateY(-1px);
 }
 
+/* OFFLINE */
+.connect-btn.is-offline {
+  background: #555;
+  opacity: 0.45;
+  pointer-events: none;   /* unclickable */
+  cursor: not-allowed;
+}
+
+/* ONLINE hover */
+.connect-btn:not(.is-offline):hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
 
 /* From Uiverse.io by njesenberger */ 
 .button {
@@ -553,5 +565,10 @@ CONNECT BUTTON
   flex-direction: column;
   gap: 6px;
   align-items: center;   
+}
+
+.hint{
+font-size:10px;
+font-style: italic;
 }
 

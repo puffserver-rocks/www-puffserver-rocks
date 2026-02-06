@@ -156,17 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul class="marquee__content">
         <li data-server="cs2">
           PUFF CASUAL SERVER IS <b class="status">CHECKING</b>
-        <a href="steam://connect/216.128.144.149:27015" class="connect-btn">CONNECT</a>
+        <a href="steam://connect/216.128.144.149:27015" class="connect-btn is-offline">CONNECT</a>
 
         </li>
         <li data-server="surf">
         PUFF SURF SERVER IS <b class="status">CHECKING </b>
-        <a href="steam://connect/14.1.30.195:27015" class="connect-btn">CONNECT</a>
+        <a href="steam://connect/14.1.30.195:27015" class="connect-btn is-offline">CONNECT</a>
         </li>
 
         <li data-server="scouts">
           PUFF SCOUTS & KNIVES SERVER IS <b class="status">CHECKING</b>
-           <a href="steam://connect/14.1.30.196:27015" class="connect-btn">CONNECT</a>
+           <a href="steam://connect/14.1.30.196:27015" class="connect-btn is-offline">CONNECT</a>
         </li>
       </ul>
 
@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <section class="panel" id="connect-csgo">
         <center>
           <h1>CONNECT CS:GO</h1>
+          <p class="hint">Open up CS:GO before cicking connect</p>
 
           <div class="code">
             connect csgo.surf
@@ -215,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <section class="panel" id="connect-cs2">
         <center>
           <h1>CONNECT CS2</h1>
-
+          <p class="hint">Open up CS2 before cicking connect</p>
           <div class="code">
             connect cs2.puff.ac
             <sl-copy-button value="connect connect cs2.puff.ac"></sl-copy-button>
@@ -376,6 +377,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   <!-- JS -->
+   <!-- MARQUEE OFFLINE BLOCK -->
+    <script>
+      function setServerStatus(server, isOnline, address) {
+  const btn = document.querySelector(
+    `.connect-btn[data-server="${server}"]`
+  );
+
+  if (!btn) return;
+
+  if (isOnline) {
+    btn.classList.remove("is-offline");
+    btn.href = `steam://connect/${address}`;
+  } else {
+    btn.classList.add("is-offline");
+    btn.removeAttribute("href");
+  }
+}
+
+    </script>
 <!-- MARQUEE SCROLL -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
