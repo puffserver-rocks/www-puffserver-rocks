@@ -5,9 +5,11 @@ on:
   push:
     branches:
       - main
+    tags:
+      - '*'
 
 env:
-  IMAGE_PREFIX: ghcr.io/puffserver-rocks/www-puffserver-rocks
+  IMAGE: ghcr.io/puffserver-rocks/www-puffserver-rocks
   PLATFORMS: linux/amd64
   COSIGN_EXPERIMENTAL: 1
 
@@ -36,26 +38,26 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: docker_meta
         uses: docker/metadata-action@v5
         with:
+          images: ${{ env.IMAGE }}
           tags: |
-            type=raw,value=latest,priority=1000
-            type=ref,event=tag,priority=900
-            type=raw,value=${{ github.sha }},priority=800
-          images: |
-            ${{ env.IMAGE_PREFIX }}
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
+            type=sha,format=long
+            type=raw,value=latest,priority=900,enable={{is_default_branch}}
 
-      - name: Build and push Docker image
-        id: build
-        uses: docker/build-push-action@v6
+      - name: Build and Push Operator Image
+        uses: docker/bake-action@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          context: .
-          pull: true
-          file: Dockerfile
-          platforms: ${{ env.PLATFORMS }}
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=local,src=/home/runner/.${{ env.IMAGE_PREFIX }}.buildx-cache
-          cache-to: type=local,dest=/home/runner/.${{ env.IMAGE_PREFIX }}.buildx-cache
+          source: .
+          files: |
+            ./docker-bake.hcl
+            cwd://${{ steps.docker_meta.outputs.bake-file }}
+          targets: build
+    
