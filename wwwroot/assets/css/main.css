@@ -472,7 +472,6 @@ CONNECT BUTTON
 }
 
 
-/* From Uiverse.io by njesenberger */ 
 .button {
   -webkit-appearance: none;
   appearance: none;
@@ -582,7 +581,6 @@ font-style: italic;
   animation: dead-flicker 3.5s infinite;
 }
 
-/* Text on the face */
 .code-buttons .button.is-offline .button-top {
   position: relative;
   color: rgba(255,180,180,0.85);
@@ -591,7 +589,6 @@ font-style: italic;
     0 1px rgba(0,0,0,0.8);
 }
 
-/* ✅ THIS is what makes it red (the face gradient) */
 .code-buttons .button.is-offline .button-top::after {
   background-image: radial-gradient(#5a1b1b, #2a0c0c) !important;
   box-shadow:
@@ -600,10 +597,7 @@ font-style: italic;
     0 1px 2px rgba(0,0,0,0.7) !important;
 }
 
-/* Cracks overlay */
 
-
-/* Add crack layers */
 .code-buttons .button.is-offline .button-top::before {
   content: "";
   position: absolute;
@@ -625,7 +619,6 @@ font-style: italic;
   mix-blend-mode: screen;
 }
 
-/* Flicker using brightness */
 @keyframes dead-flicker {
   0%, 100% { filter: brightness(0.75) contrast(1.05) saturate(1.2); }
   45% { filter: brightness(0.65) contrast(1.05) saturate(1.2); }
@@ -633,12 +626,10 @@ font-style: italic;
   55% { filter: brightness(0.62) contrast(1.05) saturate(1.2); }
 }
 
-/* Prevent press animation */
 .code-buttons .button.is-offline:active .button-top,
 .code-buttons .button.is-offline:hover .button-top {
   transform: none;
 }
-/* OFFLINE = force every layer to dead-red, kill any green/glow */
 .code-buttons .button.is-offline .button-top::after {
   background-image: radial-gradient(#5a1b1b, #220707) !important;
   box-shadow:
@@ -647,7 +638,6 @@ font-style: italic;
     0 1px 2px rgba(0,0,0,0.8) !important;
 }
 
-/* this is the strip you're still seeing */
 .code-buttons .button.is-offline .button-bottom {
   background-color: #220707 !important;
   background-image: radial-gradient(#3b0f0f, #160404) !important;
@@ -656,7 +646,6 @@ font-style: italic;
     inset 0 -1px 3px 3px rgba(0,0,0,0.55) !important;
 }
 
-/* darken the base plate too */
 .code-buttons .button.is-offline .button-base {
   background-color: rgba(40, 0, 0, 0.35) !important;
   box-shadow:
